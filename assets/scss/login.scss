@@ -1,0 +1,117 @@
+@import 'global';
+@import 'fonts';
+
+html,
+body {
+  height: 100%;
+}
+
+.login__container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 55px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background: #f7f7fa;
+  }
+}
+
+.form__wrapper {
+  width: 423px;
+  position: relative;
+}
+
+.recover__wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.7s, visibility 0.7s;
+}
+
+.login__wrapper {
+  position: relative;
+  z-index: 4;
+  transition: opacity 0.7s, visibility 0.7s;
+}
+
+.recover-active {
+  .login__wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .recover__wrapper {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    z-index: 4;
+    pointer-events: auto;
+  }
+}
+
+.login__header {
+  position: absolute;
+  left: 55px;
+  right: 55px;
+  top: 55px;
+}
+
+.login__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  right: 55px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__logo {
+  width: 120px;
+}
+
+.copyright {
+  font-weight: normal;
+  font-size: 14px;
+
+  a {
+    text-decoration: none;
+  }
+
+  .icon {
+    width: 17px;
+    color: $red;
+    margin: 0 2px;
+  }
+}
+
+.login_art {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  z-index: 2;
+  width: 57%;
+  text-align: right;
+}
